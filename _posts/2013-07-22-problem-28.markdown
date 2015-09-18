@@ -1,0 +1,47 @@
+---
+layout: post
+title: "Problem 28"
+date: 2013-07-22 22:16
+comments: true
+categories: 
+---
+Solution to Problem 28. Written in Python.
+
+Problem: Starting with the number 1 and moving to the right in a clockwise direction a 5 by 5 spiral is formed as follows:
+
+    21 22 23 24 25
+    20  7  8  9 10
+    19  6  1  2 11
+    18  5  4  3 12
+    17 16 15 14 13
+
+It can be verified that the sum of the numbers on the diagonals is 101. What is the sum of the numbers on the diagonals in a 1001 by 1001 spiral formed in the same way?
+
+```python
+#!/usr/local/bin/pypy
+
+square = 1001*1001
+ctr = 3 #start at the 3x3 grid
+totSum = 1 #we know the first number is 1
+lastNum = 2 #lastNum is always the previous number + 1
+skip = 1 #we only skip one in the 3x3 grid
+
+while(ctr*ctr <= square):
+    for x in range(1,5):
+        totSum += (lastNum + skip)
+        lastNum = lastNum + skip + 1
+    skip += 2
+    ctr += 2
+print 'Sum:',totSum
+```
+
+Update: I solved this problem using the another method. What you have to do is find the values at the corners of the square in terms of n. To find the top right value, we can see that it’s n^2. The top left corner value is (n^2-n+1). The bottom left and right values are a bit trickier to get. For the bottom left corner, what you have to notice is that the value is decreasing by (n-1). So we take our top left value and subtract (n-1) to get (n^2-2n+2). The bottom right is also decreasing by (n-1), so we take the bottom left value and subtract (n-1) to get (n^2-3n+3). Adding all four of these equations, we get 4n^2-6n+6. Now we need to iterate through each square (by 2) up to 1001 to get the solution.
+
+```python
+#!/usr/local/bin/pypy
+
+sum_num = 1
+for x in range(3, 1002, 2):
+    sum_num += 4*(x**2) - 6*x + 6
+print sum_num
+```

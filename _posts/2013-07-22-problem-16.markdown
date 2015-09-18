@@ -1,0 +1,20 @@
+---
+layout: post
+title: "Problem 16"
+date: 2013-07-22 22:11
+comments: true
+categories: 
+---
+Solution to Problem 16. Written in Python.
+
+Problem: 2^15 = 32768 and the sum of its digits is 3 + 2 + 7 + 6 + 8 = 26. What is the sum of the digits of the number 2^1000?
+
+```python
+#!/usr/local/bin/pypy
+
+sum_num = 0
+for i in str(pow(2, 1000)):
+    sum_num += int(i)
+
+print str(sum_num)
+```

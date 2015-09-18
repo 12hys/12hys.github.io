@@ -1,0 +1,10 @@
+# Site settings
+title: rhys.codes
+description: > # this means to ignore newlines until "baseurl:"
+ Putting random things here, mostly my Project Euler solutions.
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://rhys.codes" # the base hostname & protocol for your site
+github_username:  12hys
+
+# Build settings
+markdown: redcarpet

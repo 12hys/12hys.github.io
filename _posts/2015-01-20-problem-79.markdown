@@ -1,0 +1,20 @@
+---
+layout: post
+title: "Problem 79"
+date: 2015-01-20 08:45:58 -0500
+comments: true
+categories: 
+---
+Solution to Problem 79. Solved using pencil/paper.
+
+Problem: A common security method used for online banking is to ask the user for three random characters from a passcode. For example, if the passcode was 531278, they may ask for the 2nd, 3rd, and 5th characters; the expected reply would be: 317.
+
+The text file, [keylog.txt](https://projecteuler.net/project/resources/p079_keylog.txt), contains fifty successful login attempts.
+
+Given that the three characters are always asked for in order, analyse the file so as to determine the shortest possible secret passcode of unknown length.
+
+The solution to this problem is actually quite simple. Think of all the numbers in keylog.txt as rules that need to be satisifed.
+
+We start with writing down the first and second rule next to each other. You should have `319680` written down. We can see the third rule, `180`, already has the digits `1`, `8`, and `0` in order in the number `319680`. The fourth rule, `690`, is where things start to change. In order to satisfy this rule, we need to swap the `6` and `9` to arrive at `316980`.
+
+The next rule, `129`, introduces a new digit that we haven't seen before, but it hasn't changed the way we solve the problem. `1` and `9` appear to be satisfied, but in order to solve for this rule, we need to put the `2` somewhere. Putting it right after the `1` is fine; you should now have `3126980` written down. Keep doing the same thing all the way down the list, and you'll arrive at your answer.

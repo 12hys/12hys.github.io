@@ -1,0 +1,28 @@
+---
+layout: post
+title: "Problem 53"
+date: 2015-01-15 09:07:28 -0500
+comments: true
+categories: 
+---
+Solution to Problem 53. Written in Python.
+
+Problem: There are exactly ten ways of selecting three from five, 12345:
+
+`123, 124, 125, 134, 135, 145, 234, 235, 245, and 345`
+
+In combinatorics, we use the notation, <sup>5</sup>C<sub>3</sub> = 10.
+
+In general, <sup>n</sup>C<sub>r</sub> = n!/r!(n−r)!, where r ≤ n, n! = n * (n−1) * ... * 3 * 2 * 1, and 0! = 1. It is not until n = 23, that a value exceeds one-million: <sup>23</sup>C<sub>10</sub> = 1144066.
+
+How many, not necessarily distinct, values of <sup>n</sup>C<sub>r</sub>, for 1 ≤ n ≤ 100, are greater than one-million?
+
+```python
+#!/usr/bin/pypy
+
+from math import factorial
+
+nCr = lambda n, r: factorial(n) / factorial(r) / factorial(n-r)
+ncr_list = [nCr(n, r) for n in range(1, 101) for r in range(1, n+1)]
+print len([i for i in ncr_list if i > 1000000])
+```

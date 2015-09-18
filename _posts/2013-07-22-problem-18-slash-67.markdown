@@ -1,0 +1,58 @@
+---
+layout: post
+title: "Problem 18/67"
+date: 2013-07-22 22:33
+comments: true
+categories: 
+---
+Solution to Problem 18 and 67. Written in Python.
+
+Problem: By starting at the top of the triangle below and moving to adjacent numbers on the row below, the maximum total from top to bottom is 23.
+
+![Triangle](http://i.imgur.com/Irs9d.png)
+
+That is, 3 + 7 + 4 + 9 = 23.
+
+![Bigger Triangle](http://i.imgur.com/xmH2t.png)
+
+Find the maximum total from top to bottom of the triangle below:
+
+NOTE: As there are only 16384 routes, it is possible to solve this problem by trying every route. However, Problem 67, is the same challenge with a triangle containing one-hundred rows; it cannot be solved by brute force, and requires a clever method! ;o)
+
+```python
+file = open('triangle-18.txt', 'r')
+stringsOfNumbers = file.readlines()
+listOfNumbers = []
+
+for i in range(len(stringsOfNumbers)):
+    stringsOfNumbers[i] = str(stringsOfNumbers[i]).rstrip('\n')
+    '''
+    split the strings using the space delim,
+    convert to a tuple for conversion to int,
+    and append to the main list of numbers
+    '''
+    listOfNumbers.append(tuple(str(stringsOfNumbers[i]).split(' ')))
+
+listOfNumbers = [map(int, x) for x in listOfNumbers] #convert strings of numbers to int
+
+sumOfTriangle = []
+for currentRow in range(len(listOfNumbers)):
+    if(currentRow==0):
+        sumOfTriangle = listOfNumbers[currentRow]
+    else:
+        currentRowTemp = listOfNumbers[currentRow]
+        for currentColumnIndex in range(len(currentRowTemp)):
+            if(currentColumnIndex == 0): #first number in triangle
+                currentRowTemp[currentColumnIndex] = sumOfTriangle[0] + currentRowTemp[currentColumnIndex]
+            elif (currentColumnIndex == len(currentRowTemp)-1): #last number in the triangle
+                currentRowTemp[currentColumnIndex] = sumOfTriangle[len(sumOfTriangle)-1] + currentRowTemp[currentColumnIndex]
+            else: #everything in between
+                value1 = currentRowTemp[currentColumnIndex] + sumOfTriangle[currentColumnIndex-1]
+                value2 = currentRowTemp[currentColumnIndex] + sumOfTriangle[currentColumnIndex]
+                if( value1 > value2 ):
+                    currentRowTemp[currentColumnIndex] = value1
+                else:
+                    currentRowTemp[currentColumnIndex] = value2
+        sumOfTriangle = currentRowTemp
+print( 'Greatest sum of triangle:', max(sumOfTriangle) )
+```

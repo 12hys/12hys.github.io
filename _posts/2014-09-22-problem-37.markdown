@@ -1,0 +1,57 @@
+---
+layout: post
+title: "Problem 37"
+date: 2014-09-22 21:26:13 -0400
+comments: true
+categories: 
+---
+Solution to Problem 37. Written in Python.
+
+Problem: The number 3797 has an interesting property. Being prime itself, it is possible to continuously remove digits from left to right, and remain prime at each stage: 3797, 797, 97, and 7. Similarly we can work from right to left: 3797, 379, 37, and 3.
+
+Find the sum of the only eleven primes that are both truncatable from left to right and right to left.
+
+NOTE: 2, 3, 5, and 7 are not considered to be truncatable primes.
+
+
+```python
+#!/usr/local/bin/pypy
+
+import euler_lib as lib
+
+def trunked(number):
+    trunked_left = [number]
+    trunked_right = [number]
+
+    left_digits = [int(x) for x in str(number)]
+    right_digits = [int(x) for x in str(number)]
+
+    length_digits = len(left_digits)
+
+    for i in range(length_digits):
+        left_digits.pop()
+        right_digits.pop(0)
+
+        if(len(left_digits) > 0):
+            trunked_left.append(int(''.join([str(x) for x in left_digits])))
+
+        if(len(right_digits) > 0):
+            trunked_right.append(int(''.join([str(x) for x in right_digits])))
+
+    return all(t in sieve for t in trunked_left) and all(t in sieve for t in trunked_right)
+
+ctr = 0
+number = 10
+sieve = lib.eratosthenes_sieve(1000000)
+answer = 0
+
+while ctr != 11:
+    if trunked(number):
+        ctr += 1
+        print "Found %s: %s" % (ctr, number)
+        answer += number
+
+    number += 1
+
+print answer
+```

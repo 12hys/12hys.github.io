@@ -1,0 +1,45 @@
+---
+layout: post
+title: "Problem 3"
+date: 2013-07-22 21:40
+comments: true
+categories: 
+---
+Solution to Problem 3. Written in Python.
+
+Problem: The prime factors of 13195 are 5, 7, 13 and 29. What is the largest prime factor of the number 600851475143?
+
+UPDATE:
+
+```python
+#!/usr/local/bin/pypy
+
+import euler_lib as lib
+
+sieve = lib.eratosthenes_sieve(10000000)
+print max(lib.prime_factorization(600851475143, sieve))
+```
+
+Original Solution:
+
+```python
+input = 600851475143
+def isprime(x):
+    primeCtr = 0
+    for ctr in range(x,0,-1):
+        if (x%ctr == 0):
+            primeCtr += 1
+    if(primeCtr > 2):
+        return False
+    else:
+        return True
+
+start = 2
+primeFact = 1
+while((start <= input) and (primeFact != input)):
+    if(isprime(start)):
+        if(input % start == 0):
+            print( 'prime factor found: ' + str(start) )
+            primeFact = primeFact * start
+    start += 1
+```

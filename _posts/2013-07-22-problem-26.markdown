@@ -1,0 +1,48 @@
+---
+layout: post
+title: "Problem 26"
+date: 2013-07-22 22:40
+comments: true
+categories: 
+---
+Solution to Problem 26. Solved in Python.
+
+Problem: A unit fraction contains 1 in the numerator. The decimal representation of the unit fractions with denominators 2 to 10 are given:
+
+1/2 = 0.5  
+1/3 = 0.(3)  
+1/4 = 0.25  
+1/5 = 0.2  
+1/6 = 0.1(6)  
+1/7 = 0.(142857)  
+1/8 = 0.125  
+1/9 = 0.(1)  
+1/10 = 0.1
+
+Where 0.1(6) means 0.166666…, and has a 1-digit recurring cycle. It can be seen that 1/7 has a 6-digit recurring cycle.
+
+Find the value of d < 1000 for which 1/d contains the longest recurring cycle in its decimal fraction part.
+
+Notes: This is kind of a hackey solution, as there is no general method for finding reptend primes (source: http://mathworld.wolfram.com/FullReptendPrime.html). I didn’t feel like implementing it using some sort of string comparisons, because I preferred a purely mathematical solution (at least for this problem).
+
+Other sources:  
+http://en.wikipedia.org/wiki/Cyclic_number
+http://mathworld.wolfram.com/MultiplicativeOrder.html
+http://en.wikipedia.org/wiki/Full_reptend_prime
+
+```python
+#!/usr/local/bin/pypy
+
+import fractions
+import euler_lib as lib
+
+base = 10
+primes = lib.eratosthenes_sieve(1001)
+cyclic_numbers = []
+
+for prime in primes:
+    if(base % prime != 0):
+        mult_order = lib.multiplicative_order(base, prime)
+        if mult_order == (prime - 1):
+            print prime, 'Cyclic Numbers: ', mult_order
+```

@@ -1,0 +1,37 @@
+---
+layout: post
+title: "Problem 30"
+date: 2014-02-23 13:17:05 -0500
+comments: true
+categories: 
+---
+Solution to Problem 30. Written in Python.
+
+Problem: Surprisingly there are only three numbers that can be written as the sum of fourth powers of their digits:
+
+1634 = 1^4 + 6^4 + 3^4 + 4^4  
+8208 = 8^4 + 2^4 + 0^4 + 8^4  
+9474 = 9^4 + 4^4 + 7^4 + 4^4  
+
+As 1 = 1^4 is not a sum it is not included.
+
+The sum of these numbers is 1634 + 8208 + 9474 = 19316.
+
+Find the sum of all the numbers that can be written as the sum of fifth powers of their digits.
+
+```python
+#!/usr/local/bin/pypy
+
+import euler_lib as lib
+
+fifth_power = lambda x: x**5
+
+answer = []
+for i in range(2, (9**5)*6 + 1):
+    sum_of_digits = sum(map(fifth_power, lib.get_digits(i)))
+
+    if(i == sum_of_digits):
+        answer.append(i)
+
+print str(sum(answer))
+```
