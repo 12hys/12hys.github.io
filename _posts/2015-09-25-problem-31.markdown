@@ -1,0 +1,31 @@
+---
+layout: post
+title: "Problem 31"
+date: 2015-09-25 18:01:09 -0400
+comments: true
+categories:
+---
+Solution to Problem 31, written in Python.
+
+In England the currency is made up of pound, £, and pence, p, and there are eight coins in general circulation:
+
+1p, 2p, 5p, 10p, 20p, 50p, £1 (100p) and £2 (200p).
+It is possible to make £2 in the following way:
+
+1×£1 + 1×50p + 2×20p + 1×5p + 1×2p + 3×1p
+How many different ways can £2 be made using any number of coins?
+
+```pyhon
+count = 0
+
+for two_pounds in range(200, -1, -200):
+	for one_pound in range(two_pounds, -1, -100):
+		for fifty_pence in range(one_pound, -1, -50):
+			for twenty_pence in range(fifty_pence, -1, -20):
+				for ten_pence in range(twenty_pence, -1, -10):
+					for five_pence in range(ten_pence, -1, -5):
+						for two_pence in range(five_pence, -1, -2):
+							count += 1
+
+print count
+```
