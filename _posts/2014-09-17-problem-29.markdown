@@ -3,16 +3,16 @@ layout: post
 title: "Problem 29"
 date: 2014-09-17 19:42:13 -0400
 comments: true
-categories: 
+categories:
 ---
 Solution to Problem 29. Written in Python.
 
 Problem: Consider all integer combinations of ab for 2 ≤ a ≤ 5 and 2 ≤ b ≤ 5:
 
-2^2=4, 2^3=8, 2^4=16, 2^5=32  
-3^2=9, 3^3=27, 3^4=81, 3^5=243  
-4^2=16, 4^3=64, 4^4=256, 4^5=1024  
-5^2=25, 5^3=125, 5^4=625, 5^5=3125
+2<sup>2</sup>=4, 2<sup>3</sup>=8, 2<sup>4</sup>=16, 2<sup>5</sup>=32  
+3<sup>2</sup>=9, 3<sup>3</sup>=27, 3<sup>4</sup>=81, 3<sup>5</sup>=243  
+4<sup>2</sup>=16, 4<sup>3</sup>=64, 4<sup>4</sup>=256, 4<sup>5</sup>=1024  
+5<sup>2</sup>=25, 5<sup>3</sup>=125, 5<sup>4</sup>=625, 5<sup>5</sup>=3125
 
 If they are then placed in numerical order, with any repeats removed, we get the following sequence of 15 distinct terms:
 
@@ -25,28 +25,4 @@ Update 9/22/2014: After learning that list comprehensions are much faster than t
     method_one(): 0.614s
     method_two(): 0.025s
 
-
-```python
-#!/usr/local/bin/pypy
-
-import cProfile
-
-def method_one():
-    numbers = range(2, 101)
-    answer = []
-    for aa in numbers:
-        for bb in numbers:
-            ans = pow(aa, bb)
-            if(ans not in answer):
-                answer.append(ans)
-
-    print "Answer: %s" % (len(answer))
-
-def method_two():
-    numbers = range(2, 101)
-    answer = len(list(set([pow(a, b) for a in numbers for b in numbers])))
-    print "Answer: %s" % (answer)
-
-cProfile.run('method_one()')
-cProfile.run('method_two()')
-```
+<script src='https://gist.github.com/12hys/cbc5d1d2cae463071da9.js'></script>

@@ -3,7 +3,7 @@ layout: post
 title: "Problem 26"
 date: 2013-07-22 22:40
 comments: true
-categories: 
+categories:
 ---
 Solution to Problem 26. Solved in Python.
 
@@ -25,24 +25,10 @@ Find the value of d < 1000 for which 1/d contains the longest recurring cycle in
 
 Notes: This is kind of a hackey solution, as there is no general method for finding reptend primes (source: http://mathworld.wolfram.com/FullReptendPrime.html). I didn’t feel like implementing it using some sort of string comparisons, because I preferred a purely mathematical solution (at least for this problem).
 
-Other sources:  
-http://en.wikipedia.org/wiki/Cyclic_number
-http://mathworld.wolfram.com/MultiplicativeOrder.html
-http://en.wikipedia.org/wiki/Full_reptend_prime
+Other sources:
 
-```python
-#!/usr/local/bin/pypy
+- [Cyclic Number](http://en.wikipedia.org/wiki/Cyclic_number)
+- [Multiplicative Order](http://mathworld.wolfram.com/MultiplicativeOrder.html)
+- [Full Reptend Prime](http://en.wikipedia.org/wiki/Full_reptend_prime)
 
-import fractions
-import euler_lib as lib
-
-base = 10
-primes = lib.eratosthenes_sieve(1001)
-cyclic_numbers = []
-
-for prime in primes:
-    if(base % prime != 0):
-        mult_order = lib.multiplicative_order(base, prime)
-        if mult_order == (prime - 1):
-            print prime, 'Cyclic Numbers: ', mult_order
-```
+<script src='https://gist.github.com/12hys/c9004f54860998d8fb0e.js'></script>

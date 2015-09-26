@@ -3,20 +3,10 @@ layout: post
 title: "Problem 6"
 date: 2013-07-22 21:46
 comments: true
-categories: 
+categories:
 ---
 Solution to Problem 6. Written in Python.
 
 Problem: The sum of the squares of the first ten natural numbers is, 12 + 22 + … + 102 = 385. The square of the sum of the first ten natural numbers is, (1 + 2 + … + 10)2 = 552 = 3025. Hence the difference between the sum of the squares of the first ten natural numbers and the square of the sum is 3025 − 385 = 2640. Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
 
-```python
-#!/usr/local/bin/pypy
-
-x = range(1, 101)
-sum_of_squares = 0
-
-for ctr in x:
-    sum_of_squares += pow(ctr, 2)
-
-print str(pow(sum(x), 2) - sum_of_squares)
-```
+<script src='https://gist.github.com/12hys/8d46836055d1c210f2c5.js'></script>

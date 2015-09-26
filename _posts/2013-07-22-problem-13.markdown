@@ -3,7 +3,7 @@ layout: post
 title: "Problem 13"
 date: 2013-07-22 22:04
 comments: true
-categories: 
+categories:
 ---
 Solution to Problem 13. Written in Python.
 
@@ -112,18 +112,4 @@ I have a text file named “Problem0013.txt” with the numbers in it:
     20849603980134001723930671666823555245252804609722
     53503534226472524250874054075591789781264330331690
 
-```python
-#!/usr/local/bin/pypy
-
-file = open('Problem0013.txt', 'r')
-x = file.readlines()
-
-sum_num = 0
-
-for i in x:
-    sum_num += int(i)
-
-print sum_num
-
-file.close()
-```
+<script src='https://gist.github.com/12hys/fd1a8feebd11f4d25943.js'></script>

@@ -3,7 +3,7 @@ layout: post
 title: "Problem 32"
 date: 2015-01-16 14:18:42 -0500
 comments: true
-categories: 
+categories:
 ---
 Solution to Problem 32. Written in Python.
 
@@ -15,21 +15,4 @@ Find the sum of all products whose multiplicand/multiplier/product identity can 
 
 HINT: Some products can be obtained in more than one way so be sure to only include it once in your sum.
 
-```python
-#!/usr/local/bin/pypy
-
-import sys
-import euler_lib as lib
-
-products = []
-
-for multiplier in range(1, 10000):
-    for multiplicand in range(1, 10000):
-        product = multiplier * multiplicand
-        number = str(multiplier) + str(multiplicand) + str(product)
-
-        if len(number) == 9 and lib.is_pandigital(int(number)):
-            products.append(product)
-
-print sum(lib.unique(products))
-```
+<script src='https://gist.github.com/12hys/e71cc7c3e18de31f4a4b.js'></script>

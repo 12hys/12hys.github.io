@@ -3,94 +3,10 @@ layout: post
 title: "Problem 7"
 date: 2013-07-22 21:46
 comments: true
-categories: 
+categories:
 ---
 Solution to Problem 7. Written in Python.
 
 Problem: By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6<sup>th</sup> prime is 13. What is the 10001<sup>st</sup> prime number?
 
-UPDATE 2: An ever faster (and shorter!) solution:
-
-```python
-#!/usr/local/bin/pypy
-
-import euler_lib as lib
-
-print lib.eratosthenes_sieve(1000000)[10000]
-```
-
-Timing:
-
-    time ./completed/Problem0007.py
-    104743
-
-    real    0m0.203s
-    user    0m0.164s
-    sys     0m0.034s
-
-UPDATE 1: A much faster algorithm is shown below. I used some facts about prime numbers to get this solution.
-
-```python
-import itertools
-import math
-
-def is_prime( number ):
-    if( number % 2 == 0 ):
-        return False
-
-    ctr = 0
-    for i in range( 2, int( math.ceil( math.sqrt( number ) ) ) + 1 ):
-        if( number % i == 0 ):
-            ctr += 1
-    if( ctr >= 1 ):
-        return False
-    else:
-        return True
-
-ctr = 1
-end = 10001
-
-for i in itertools.count( start = 3, step = 1 ):
-    if( is_prime( i ) ):
-        ctr += 1
-    if( ctr == end ):
-        print '#' + str( ctr ) + ') ' + str( i )
-        break
-```
-
-Running this yields the following timing:
-
-    time pypy problem7.py
-    real    0m0.367s
-    user    0m0.352s
-    sys     0m0.016s
-
-```python
-def isprime(x):
-    primeCtr = 0
-    for ctr in range(x,0,-1):
-        if (x%ctr == 0):
-            primeCtr += 1
-    if(primeCtr > 2):
-        return False
-    else:
-        return True
-
-start = 2
-num = 0
-end = 10001
-while(num != end):
-    if(start%2 != 0):
-        if(isprime(start)):
-            num += 1
-            print( str(num) + 'th prime: ' + str(start) )
-    if(num < end):
-        start += 1
-```
-
-Timing for the solution above:
-
-    time pypy problem7.py
-    real    0m54.715s
-    user    0m54.595s
-    sys     0m0.020s
+<script src='https://gist.github.com/12hys/04c66c001c47d574af06.js'></script>

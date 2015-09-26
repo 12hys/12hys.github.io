@@ -3,26 +3,10 @@ layout: post
 title: "Problem 179"
 date: 2015-01-16 15:22:50 -0500
 comments: true
-categories: 
+categories:
 ---
 Solution to Problem 179. Written in Python.
 
-Problem: Find the number of integers 1 < n < 10^7, for which n and n + 1 have the same number of positive divisors. For example, 14 has the positive divisors 1, 2, 7, 14 while 15 has 1, 3, 5, 15.
+Problem: Find the number of integers 1 < n < 10<sup>7</sup>, for which n and n + 1 have the same number of positive divisors. For example, 14 has the positive divisors 1, 2, 7, 14 while 15 has 1, 3, 5, 15.
 
-```python
-#!/usr/local/bin/pypy
-
-import euler_lib as lib
-from multiprocessing import Pool
-
-p = Pool(8)
-divisors = p.map(lib.get_divisor_count, range(2, 10**7))
-p.close();
-
-ctr = 0
-for n in range(0, len(divisors) - 1):
-    if divisors[n] == divisors[n+1]:
-        ctr = ctr + 1
-
-print ctr
-```
+<script src='https://gist.github.com/12hys/ee2d95a0abadc08b6b92.js'></script>

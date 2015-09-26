@@ -3,7 +3,7 @@ layout: post
 title: "Problem 23"
 date: 2014-10-16 13:00:27 -0400
 comments: true
-categories: 
+categories:
 ---
 Solution to Problem 23. Written in Python.
 
@@ -15,17 +15,4 @@ As 12 is the smallest abundant number, 1 + 2 + 3 + 4 + 6 = 16, the smallest numb
 
 Find the sum of all the positive integers which cannot be written as the sum of two abundant numbers.
 
-```python
-#!/usr/local/bin/pypy
-
-import euler_lib as lib
-
-upper_limit = 28123
-numbers = range(1, upper_limit+1)
-abundant_numbers = [n for n in numbers if sum(lib.get_divisors(n)) > n]
-
-ctr = range(0, len(abundant_numbers))
-sums = lib.unique([abundant_numbers[i] + abundant_numbers[j] for i in ctr for j in ctr])
-
-print sum([n for n in numbers if n not in sums])
-```
+<script src='https://gist.github.com/12hys/e90bc40cc33c2ba2c59b.js'></script>

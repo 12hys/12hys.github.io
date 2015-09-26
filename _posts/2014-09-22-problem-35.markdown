@@ -3,7 +3,7 @@ layout: post
 title: "Problem 35"
 date: 2014-09-22 21:26:08 -0400
 comments: true
-categories: 
+categories:
 ---
 Solution to Problem 35. Written in Python.
 
@@ -13,30 +13,4 @@ There are thirteen such primes below 100: 2, 3, 5, 7, 11, 13, 17, 31, 37, 71, 73
 
 How many circular primes are there below one million?
 
-```python
-#!/usr/local/bin/pypy
-
-import collections
-import euler_lib as lib
-
-def get_rotations(number):
-    rotations = [number]
-    d = collections.deque([int(n) for n in str(number)])
-
-    for i in range(len(d) - 1):
-        d.rotate(1)
-        rotations.append(int(''.join(str(digit) for digit in d)))
-
-    return rotations
-
-answer = 0
-sieve = lib.eratosthenes_sieve(1000000)
-prime_numbers = filter(lambda x: x < 1000000, sieve)
-
-for n in prime_numbers:
-    rotations = get_rotations(n)
-    if all(p in prime_numbers for p in rotations):
-        answer += 1
-
-print answer
-```
+<script src='https://gist.github.com/12hys/30a0a5bc39cb7d35f8bd.js'></script>

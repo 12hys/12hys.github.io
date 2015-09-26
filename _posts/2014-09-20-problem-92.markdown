@@ -3,7 +3,7 @@ layout: post
 title: "Problem 92"
 date: 2014-09-20 10:34:24 -0400
 comments: true
-categories: 
+categories:
 ---
 Solution to Problem 92. Written in Python.
 
@@ -18,21 +18,4 @@ Therefore any chain that arrives at 1 or 89 will become stuck in an endless loop
 
 How many starting numbers below ten million will arrive at 89?
 
-```python
-#!/usr/local/bin/pypy
-
-def sum_of_digit_squares(num):
-    return sum(map(lambda x: int(x)**2, str(num)))
-
-answers = []
-for num in range(2, 10000001):
-    next_number = sum_of_digit_squares(num)
-
-    while next_number != 89 and next_number != 1:
-        next_number = sum_of_digit_squares(next_number)
-
-    if next_number == 89:
-        answers.append(num)
-
-print len(answers)
-```
+<script src='https://gist.github.com/12hys/44a3c0cbd079f8a54c29.js'></script>

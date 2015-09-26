@@ -3,25 +3,10 @@ layout: post
 title: "Problem 20"
 date: 2013-07-22 22:15
 comments: true
-categories: 
+categories:
 ---
 Solution to Problem 20. Written in Python.
 
 Problem: n! means n x (n - 1) x … x 3 x 2 x 1. For example, 10! = 10 x 9 x … x 3 x 2 x 1 = 3628800, and the sum of the digits in the number 10! is 3 + 6 + 2 + 8 + 8 + 0 + 0 = 27. Find the sum of the digits in the number 100!
 
-```python
-#!/usr/local/bin/pypy
-
-def fact(n):
-    if (n == 1):
-        return 1
-
-    return n * fact(n - 1)
-    
-x = fact(100)
-sum_num = 0
-for i in str(x):
-    sum_num += int(i)
-
-print str(sum_num)
-```
+<script src='https://gist.github.com/12hys/0720321bb2c72d3a7b48.js'></script>

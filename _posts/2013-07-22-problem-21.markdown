@@ -3,7 +3,7 @@ layout: post
 title: "Problem 21"
 date: 2013-07-22 22:38
 comments: true
-categories: 
+categories:
 ---
 Solution to Problem 21. Written in Python.
 
@@ -14,20 +14,4 @@ For example, the proper divisors of 220 are 1, 2, 4, 5, 10, 11, 20, 22, 44, 55 a
 
 Evaluate the sum of all the amicable numbers under 10000.
 
-```python
-#!/usr/local/bin/pypy
-
-import euler_lib as lib
-
-amicable_numbers = []
-
-for number in range(0, 10000):
-    sum_of_divisor = sum(lib.get_divisors(number))
-    
-    if number != sum_of_divisor:
-        if sum(lib.get_divisors(sum_of_divisor)) == number:
-            amicable_numbers.append(number)
-            amicable_numbers.append(sum_of_divisor)
-
-print sum(lib.unique(amicable_numbers))
-```
+<script src='https://gist.github.com/12hys/1999f0ccecf66b7b4437.js'></script>

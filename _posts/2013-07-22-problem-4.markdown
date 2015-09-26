@@ -3,46 +3,10 @@ layout: post
 title: "Problem 4"
 date: 2013-07-22 21:43
 comments: true
-categories: 
+categories:
 ---
 Solution to Problem 4. Written in Python.
 
 Problem: A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99. Find the largest palindrome made from the product of two 3-digit numbers.
 
-UPDATE: A much faster and shorter solution.
-
-```python
-#!/usr/local/bin/pypy
-
-import euler_lib as lib
-
-print max([i*j for i in range(100, 1000) for j in range(100, 1000) if lib.is_palindrome(i*j)])
-```
-
-Original Solution:
-
-```python
-def ispalindrome(x):
-    palindrome = ''
-    temp = x
-    multiplier = 10
-    for ctr in range(0,len(str(x))):
-        lastDigit = temp%10
-        temp = x/multiplier
-        multiplier *= 10
-        palindrome += str(lastDigit)
-    if(palindrome == str(x)):
-        return True
-    else:
-        return False
-
-num1 = num2 = 999
-product = 0
-biggestPalindrome = 0
-for ctr in range(num2,0,-1):
-    for ctr2 in range(num1,0,-1):
-        product = ctr * ctr2
-        if(ispalindrome(product)):
-            biggestPalindrome = max(product, biggestPalindrome)
-print( str(biggestPalindrome) )
-```
+<script src='https://gist.github.com/12hys/e90e5e07670084279aba.js'></script>

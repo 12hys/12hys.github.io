@@ -9,4 +9,4 @@ Solution to Problem 1. Written in Python.
 
 Problem: If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23. Find the sum of all the multiples of 3 or 5 below 1000.
 
-<script src="https://gist.github.com/12hys/1e8a0182076d5ad3011d.js"></script>
+<script src='https://gist.github.com/12hys/da04bb4fa215887ab99d.js'></script>

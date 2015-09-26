@@ -3,18 +3,10 @@ layout: post
 title: "Problem 48"
 date: 2013-07-22 22:12
 comments: true
-categories: 
+categories:
 ---
 Solution to Problem 48. Written in Python.
 
-Problem: The series, 1^1 + 2^2 + 3^3 + … + 10^10 = 10405071317. Find the last ten digits of the series, 1^1 + 2^2 + 3^3 + … + 1000^1000.
+Problem: The series, 1<sup>1</sup> + 2<sup>2</sup> + 3<sup>3</sup> + … + 10<sup>10</sup> = 10405071317. Find the last ten digits of the series, 1<sup>1</sup> + 2<sup>2</sup> + 3<sup>3</sup> + … + 1000<sup>1000</sup>.
 
-```python
-#!/usr/local/bin/pypy
-
-sum_num = 0
-for x in range(1, 1001):
-    sum_num += pow(x, x)
-
-print str(sum_num)[-10:]
-```
+<script src='https://gist.github.com/12hys/3a51545bd5040d21e103.js'></script>

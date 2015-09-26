@@ -3,7 +3,7 @@ layout: post
 title: "Problem 42"
 date: 2015-01-15 10:05:28 -0500
 comments: true
-categories: 
+categories:
 ---
 Solution to Problem 42. Written in Python.
 
@@ -15,19 +15,4 @@ By converting each letter in a word to a number corresponding to its alphabetica
 
 Using [words.txt](https://projecteuler.net/project/resources/p042_words.txt) (right click and 'Save Link/Target As...'), a 16K text file containing nearly two-thousand common English words, how many are triangle words?
 
-```python
-#/usr/local/bin/pypy
-
-import csv
-
-get_num = lambda word: sum(["-ABCDEFGHIJKLMNOPQRSTUVWXYZ".index(char) for char in word])
-tri = lambda n: n*(n+1)/2
-
-tri_list = [tri(n) for n in range(1, 100)]
-
-with open( 'p042_words.txt', 'r' ) as text_file:
-    rows = csv.reader(text_file, delimiter=',', quotechar='"')
-    words = [word for row in rows for word in row]
-
-print len([word for word in words if get_num(word) in tri_list])
-```
+<script src='https://gist.github.com/12hys/38fcf63809e0fd9b69df.js'></script>

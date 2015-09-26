@@ -3,7 +3,7 @@ layout: post
 title: "Problem 19"
 date: 2013-07-22 22:36
 comments: true
-categories: 
+categories:
 ---
 Solution to Problem 19. Written in Python.
 
@@ -15,20 +15,4 @@ Problem: You are given the following information, but you may prefer to do some 
 
 How many Sundays fell on the first of the month during the twentieth century (1 Jan 1901 to 31 Dec 2000)?
 
-```python
-#!/usr/local/bin/pypy
-
-import calendar
-from datetime import date
-
-twentieth_century = range( 1901, 2001 )
-months = range( 1, 13 )
-sunday_count = 0
-
-for year in twentieth_century:
-    for month in months:
-        if( date( year, month, 1 ).weekday() == 6 ):
-            sunday_count += 1
-
-print sunday_count
-```
+<script src='https://gist.github.com/12hys/2667970f87966f9b3ab3.js'></script>

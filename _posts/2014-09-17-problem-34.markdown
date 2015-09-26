@@ -3,7 +3,7 @@ layout: post
 title: "Problem 34"
 date: 2014-09-17 20:19:29 -0400
 comments: true
-categories: 
+categories:
 ---
 Solution to Problem 34. Written in Python.
 
@@ -13,16 +13,4 @@ Find the sum of all numbers which are equal to the sum of the factorial of their
 
 Note: as 1! = 1 and 2! = 2 are not sums they are not included.
 
-```python
-#!/usr/local/bin/pypy
-
-import math
-
-answer = []
-for n in range(3, 10000000):
-    sum_of_factorials = sum(map(lambda x: math.factorial(int(x)), str(n)))
-    if(sum_of_factorials == n):
-        answer.append(sum_of_factorials)
-
-print sum(answer)
-```
+<script src='https://gist.github.com/12hys/0a540d727aedd2b8852d.js'></script>

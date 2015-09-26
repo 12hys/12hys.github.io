@@ -3,7 +3,7 @@ layout: post
 title: "Problem 40"
 date: 2015-01-15 09:03:08 -0500
 comments: true
-categories: 
+categories:
 ---
 Solution to Problem 40. Written in Python.
 
@@ -17,10 +17,4 @@ If d<sub>n</sub> represents the n<sup>th</sup> digit of the fractional part, fin
 
 d<sub>1</sub> * d<sub>10</sub> * d<sub>100</sub> * d<sub>1000</sub> * d<sub>10000</sub> * d<sub>100000</sub> * d<sub>1000000</sub>
 
-```python
-#!/usr/bin/pypy
-
-d = "-" + "".join([str(i) for i in range(1, 1000000)])
-
-print int(d[1]) * int(d[10]) * int(d[100]) * int(d[1000]) * int(d[10000]) * int(d[100000]) * int(d[1000000])
-```
+<script src='https://gist.github.com/12hys/96df937bb18d3dff7271.js'></script>

@@ -85,5 +85,5 @@ class GistManager
 end
 
 gm = GistManager.new
-#gm.create_or_update_gists
+gm.create_or_update_gists
 gm.print_gist_hash

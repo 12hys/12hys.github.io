@@ -3,7 +3,7 @@ layout: post
 title: "Problem 45"
 date: 2015-01-15 09:07:23 -0500
 comments: true
-categories: 
+categories:
 ---
 Solution to Problem 45. Written in Python.
 
@@ -17,21 +17,4 @@ It can be verified that T<sub>285</sub> = P<sub>165</sub> = H<sub>143</sub> = 40
 
 Find the next triangle number that is also pentagonal and hexagonal.
 
-```python
-#!/usr/bin/pypy
-
-t = lambda n: n*(n+1)/2
-p = lambda n: n*(3*n-1)/2
-h = lambda n: n*(2*n-1)
-
-end = 100000
-
-p_list = [p(i) for i in range(1, end)]
-h_list = [h(i) for i in range(1, end)]
-
-for n in range(286, end):
-    ans = t(n)
-    if ans in p_list and ans in h_list:
-        print ans, (n, p_list.index(ans) + 1, h_list.index(ans) + 1)
-        break
-```
+<script src='https://gist.github.com/12hys/f096211a403fc42380fe.js'></script>

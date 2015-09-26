@@ -3,16 +3,10 @@ layout: post
 title: "Problem 10"
 date: 2013-07-22 21:57
 comments: true
-categories: 
+categories:
 ---
 Solution to Problem 10. Written in Python.
 
 Problem: The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17. Find the sum of all the primes below two million.
 
-```python
-#!/usr/local/bin/pypy
-
-import euler_lib as lib
-
-print sum(lib.eratosthenes_sieve(2000000))
-```
+<script src='https://gist.github.com/12hys/e6d2c29ea8aca6d314be.js'></script>
