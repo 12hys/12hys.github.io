@@ -23,3 +23,8 @@ task :new_post, :title do |t, args|
     post.puts "---"
   end
 end
+
+def get_stdin(message)
+  print message
+  STDIN.gets.chomp
+end
