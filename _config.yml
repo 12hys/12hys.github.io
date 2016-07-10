@@ -7,4 +7,4 @@ url: "http://rhys.codes" # the base hostname & protocol for your site
 github_username:  12hys
 
 # Build settings
-markdown: redcarpet
+markdown: kramdown

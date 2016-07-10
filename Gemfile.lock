@@ -124,7 +124,6 @@ GEM
     rb-fsevent (0.9.7)
     rb-inotify (0.9.7)
       ffi (>= 0.5.0)
-    redcarpet (3.3.4)
     rouge (1.11.1)
     safe_yaml (1.0.4)
     sass (3.4.22)
@@ -146,7 +145,7 @@ DEPENDENCIES
   github-pages (= 86)
   github_api
   json
-  redcarpet
+  kramdown
   stringex
 
 BUNDLED WITH
