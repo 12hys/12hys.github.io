@@ -244,7 +244,7 @@ GEM
     multi_json (1.14.1)
     multi_xml (0.6.0)
     multipart-post (2.2.3)
-    nokogiri (1.13.7)
+    nokogiri (1.13.9)
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
     oauth2 (1.4.4)
@@ -300,4 +300,8 @@ DEPENDENCIES
   github-pages (= 227)
   github_api
   kramdown
+  nokogiri (= 1.13.9)
   stringex
+
+BUNDLED WITH
+   2.1.2

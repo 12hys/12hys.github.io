@@ -8,3 +8,4 @@ gem 'github-pages', versions['github-pages']
 gem 'github_api'
 gem 'kramdown'
 gem 'stringex'
+gem 'nokogiri', versions['nokogiri']
