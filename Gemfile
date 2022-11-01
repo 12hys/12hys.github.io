@@ -1,8 +1,11 @@
 source 'https://rubygems.org'
 
 require 'json'
-require 'open-uri'
-versions = JSON.parse(open('https://pages.github.com/versions.json').read)
+require 'httparty'
+
+response = HTTParty.get('https://pages.github.com/versions.json')
+
+versions = JSON.parse(response.body)
 
 gem 'github-pages', versions['github-pages']
 gem 'github_api'
