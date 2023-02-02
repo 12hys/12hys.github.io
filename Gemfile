@@ -4,7 +4,7 @@ require 'json'
 # require 'open-uri'
 # versions = JSON.parse(open('https://pages.github.com/versions.json').read)
 
-gem 'github-pages', "227"
+gem 'github-pages', "228"
 gem 'github_api'
 gem 'kramdown'
 gem 'stringex'
