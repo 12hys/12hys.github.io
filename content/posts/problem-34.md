@@ -1,0 +1,24 @@
+---
+title: "Problem 34"
+date: 2014-09-17T20:19:29-04:00
+---
+Solution to Problem 34. Written in Python.
+
+Problem: 145 is a curious number, as 1! + 4! + 5! = 1 + 24 + 120 = 145.
+
+Find the sum of all numbers which are equal to the sum of the factorial of their digits.
+
+Note: as 1! = 1 and 2! = 2 are not sums they are not included.
+
+```python
+import math
+
+answer = []
+for n in range(3, 10000000):
+    sum_of_factorials = sum(map(lambda x: math.factorial(int(x)), str(n)))
+    if(sum_of_factorials == n):
+        answer.append(sum_of_factorials)
+
+print sum(answer)
+
+```
