@@ -1,0 +1,12 @@
+---
+title: "Problem 15"
+date: 2013-07-22T22:07:00
+---
+Solution to Problem 15. Solved using combinatorics.
+
+Problem: Starting in the top left corner of a 2 x 2 grid, there are 6 routes (without backtracking) to the bottom right corner.
+
+How many routes are there through a 20 x 20 grid?
+
+The answer is the [binomial coefficient](http://reference.wolfram.com/mathematica/ref/Binomial.html):
+    C(40,20)
