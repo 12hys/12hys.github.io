@@ -5,6 +5,9 @@ Personal blog built with [Hugo](https://gohugo.io/) and the [Coder](https://gith
 ## Local development
 
 ```
+# Clone the repo and run these commands to launch it locally:
+git submodule update --init --recursive
+brew install hugo
 hugo server
 ```
 
