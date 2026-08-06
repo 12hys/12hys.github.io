@@ -6,3 +6,6 @@
 # Jekyll (legacy)
 _site
 .sass-cache
+
+# IntelliJ
+.idea/

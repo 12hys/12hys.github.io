@@ -10,16 +10,21 @@ All opinions on this site are my own.
 
 ## Tech Stack
 
-**Current**: Java, PHP, MySQL, Redis, Apache Storm, Apache Flink, Apache Kafka, Victoria Metrics, Kubernetes, Terraform, Symfony Framework, Grafana, Spring Framework, Splunk, AWS
-
-**Previous**: Ember.js, AngularJS, Postgres
+* **Languages:** Java, PHP, Python, SQL 
+* **Data & Streaming:** Apache Flink, Apache Kafka, Apache Storm, SQS, MySQL 
+* **Infrastructure & Cloud:** AWS (Managed Flink, Kinesis, ElastiCache Redis, SQS), Kubernetes, Docker, Buildkite 
+* **Backend Ecosystem:** Symfony, Spring Boot, Dropwizard (REST APIs), Hibernate 
+* **Profiling:** VisualVM, Java Flight Recorder, XHProf 
+* **Observability:** Grafana, Prometheus, Splunk 
+* **AI-Assisted Development:** Claude Code, Gemini 
+* **Previous**: Ember.js, AngularJS, Postgres
 
 ## Favorite Books
 I love to read technical books, but like most I struggle to find the time between work and personal life. Here are some of my favorites over the years:
 
 **Designing Data-Intensive Applications** (Martin Kleppman): An absolute must read for any software engineer. I read the first edition and plan to come back and read the second (uhh, eventually). This book helped me understand databases and the fundamentals that underpin them at a low level (concurrency, indexes, etc). Martin has a deep understanding of distributed systems and excels at communicating technically dense concepts clearly. If you're a Senior Engineer with a desire to grow your technical skills, you seriously need to read this book.
 
-**Grokking Algorithms** (Aditya Y. Bhargava): I never knew algorithms could be fun. This book was an absolute page turner and help me realize how much of a visual learner I am. Algorithms are hard, but the author's unique visual explanation of them really made some of these fundamentals click for me. It will mostly benefit early Computer Science or Computer Engineering students, but has quite a lot to offer even for seasoned software devs in the industry.
+**Grokking Algorithms** (Aditya Y. Bhargava): I never knew algorithms could be _this_ fun. This book was an absolute page turner and help me realize how much of a visual learner I am. Algorithms are hard, but the author's unique visual explanation of them really made some of these fundamentals click for me. It will mostly benefit early Computer Science or Computer Engineering students, but has quite a lot to offer even for seasoned software devs in the industry.
 
 **Pragmatic Unit Testing in Java 8 with JUnit** (Andy Hunt, Dave Thomas, Jeff Langr): This book shaped my philosophy on code earlier on in my career. It helped me understand how seemingly unimportant things (e.g. properly naming functions) have the ability to self-document and communicate intent to reviewers of your code. It also gives you a framework for what you should test. While the examples focus on Java and JUnit, the concepts carry over to the language of your choice.
 
@@ -29,9 +34,11 @@ I love to read technical books, but like most I struggle to find the time betwee
 
 **Storm Applied** (Sean T. Allen, Matthew Jankowski, Peter Pathirana): Back when I first started working in the world of stream processing and distributed systems, this book was the practical guide for understanding how to create data processing pipelines in Apache Storm. These days, Storm may have lost some share to frameworks like Flink, Spark, and Kafka Streams as stream processing has evolved. If your company is still on Storm, this book will teach you everything you need to know.
 
+### Currently Reading
+- A Philosophy of Software Design
+
 ### On the shelf
 
 - Java Concurrency in Practice
 - Designing Data Intensive Applications (2nd Edition)
-- A Philosophy of Software Design
 - Effective Java (3rd Edition)
